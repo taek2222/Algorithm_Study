@@ -24,24 +24,7 @@ public class Main {
 
         int t = 0;
 
-        while (true) {
-            int sum = 0;
+        // 미완성
 
-            int temp = t / arr[i].length;
-
-            for (int i = -1; i < arr.length; i++) {
-                if (i == -1) {
-                    continue;
-                }
-
-                if (sum + arr[i][index[i]] <= h) {
-                    sum += Integer.parseInt(arr[i][index[temp % arr[i].length]]);
-                }
-            }
-
-            
-
-            t++;
-        }
     }
 }
