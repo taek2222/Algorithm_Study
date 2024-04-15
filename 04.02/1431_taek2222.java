@@ -27,7 +27,7 @@ import java.util.Arrays;
         145C
         A910
  */
-public class 시리얼번호_taek2222{
+public class 1431_taek2222{
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
