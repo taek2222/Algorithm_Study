@@ -63,11 +63,11 @@ for _ in range(m):
     m_list[no2][no1] = False
 
 for i in range(1, n-1):
-    for j in range(i+1, n):
+    for j in range(i+1, n): #(1,1)부터 시작
 
-        if m_list[i][j]:
+        if m_list[i][j]: # 1번,2번 선택한것이 가능한 조합일 때만
             for k in range(j+1, n+1):
-                if m_list[i][k] and m_list[j][k]:
+                if m_list[i][k] and m_list[j][k]: #1번3번, 2번3번 조합이 가능할 때 
                     cnt += 1
 
 print(cnt)
