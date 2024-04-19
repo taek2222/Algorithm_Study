@@ -19,7 +19,7 @@ import java.util.Map;
     $3$, 최대 $100$이다.
 */
 
-public class N3_20291_taek2222 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Map<String, Integer> map = new HashMap<>();
