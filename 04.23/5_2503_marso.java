@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 import java.util.ArrayList;
 
 public class Main {
-    // strike인지 확인
+    // strike count
     public static int cntStrike(int num1, int num2) {
         int n1 = num1 / 100;
         int n2 = num1 % 100 / 10;
@@ -24,7 +24,7 @@ public class Main {
         return strike;
     }
 
-    // ball인지 확인
+    // ball count
     public static int cntBall(int num1, int num2) {
         int n1 = num1 / 100;
         int n2 = num1 % 100 / 10;
@@ -77,16 +77,18 @@ public class Main {
             // 모든 경우의 수에서 input이 strike, ball이 가능한 모든 조건을 필터링
 
             // case 1: 반복문에서 조건에 안 맞는 경우 remove
-            // for (int c = cases.size() - 1; c >= 0; c--) {
-            //     int num = cases.get(c);
+            /* 
+            for (int c = cases.size() - 1; c >= 0; c--) {
+                int num = cases.get(c);
 
-            //     int tStrike = cntStrike(input, num);
-            //     int tBall = cntBall(input, num);
+                int tStrike = cntStrike(input, num);
+                int tBall = cntBall(input, num);
 
-            //     if (tStrike != strike || tBall != ball) {
-            //         cases.remove(new Integer(num));
-            //     }
-            // }
+                if (tStrike != strike || tBall != ball) {
+                    cases.remove(new Integer(num));
+                }
+            }
+            */            
 
             // case 2: removeIf를 사용한 방법, 더 좋은 방법이 없을까 찾던 중 GPT가 알려줌
             cases.removeIf(num -> {
