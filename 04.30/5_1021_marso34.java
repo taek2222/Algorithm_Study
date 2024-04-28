@@ -27,8 +27,8 @@ public class Main {
                 .collect(Collectors.toCollection(LinkedList::new));
 
         /**
-         * 1. queue.remove();                    // 첫번째 원소 뽑아내기
-         * 2. queue.add(queue.remove())          // 왼쪽으로 한 칸 이동
+         * 1. queue.poll();                      // 첫번째 원소 뽑아내기
+         * 2. queue.add(queue.poll())            // 왼쪽으로 한 칸 이동
          * 3. queue.addFirst(queue.removeLast()) // 오른쪽으로 한 칸 이동
          * 
          * 1 2 3 4 5 6 7 8 9 // 기준
@@ -39,7 +39,6 @@ public class Main {
 
         int cnt = 0;
 
-        loop1:
         for (int index : arr) {  
             /**
              * index의 실제 위치가 어디 있느냐에 따라서 결정
