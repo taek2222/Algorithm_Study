@@ -45,14 +45,14 @@ import java.util.StringTokenizer;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String[] friends = {"muzi", "ryan", "frodo", "neo"};
         String[] gifts = {"muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"};
 
-        solution(friends, gifts);
+        System.out.println(solution(friends, gifts));
     }
 
-    public static void solution(String[] friends, String[] gifts) {
+    public static int solution(String[] friends, String[] gifts) {
 
         int arrayLength = friends.length;
         // 주고받은 선물 배열
@@ -80,17 +80,38 @@ public class Solution {
         }
 
         // 선물 지수 배열 값 삽입
-        for(int i = 0; i < arrayLength; i++)
-            for(int j = 0; j < arrayLength; j++) {
-                if(giftList[i][j] == 0)
+        for(int i = 0; i < arrayLength; i++) {
+            for (int j = 0; j < arrayLength; j++) {
+                if (giftList[i][j] == 0)
                     continue;
                 // 준 선물 카운팅
                 index[i][0] += giftList[i][j];
                 // 받은 선물 카운팅
                 index[j][1] += giftList[i][j];
             }
+        }
 
+        // 선물 지수 값 계산
+        for(int i = 0; i < arrayLength; i++)
+            index[i][2] = index[i][0] - index[i][1];
 
+        // 가장 많은 선물 값
+        int maxGift = 0;
+        for(int i = 0; i < arrayLength; i++) {
+            int giftCount = 0;
+            for(int j = 0; j < arrayLength; j++) {
+                if (giftList[i][j] > giftList[j][i])
+                    giftCount++;
+                else if(giftList[i][j] == giftList[j][i]) {
+                    if(index[i][2] > index[j][2])
+                        giftCount++;
+                }
+            }
+            if(giftCount > maxGift)
+                maxGift = giftCount;
+        }
+
+        /*
         // 테스트 출력문
         System.out.println(Arrays.toString(friends));
         System.out.println(Arrays.toString(gifts));
@@ -106,5 +127,8 @@ public class Solution {
                 System.out.print(index[i][j]);
             System.out.println();
         }
+        */
+
+        return maxGift;
     }
 }
