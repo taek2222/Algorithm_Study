@@ -1,6 +1,4 @@
-import java.io.IOException;
 import java.util.Arrays;
-import java.util.StringTokenizer;
 
 /*
     https://school.programmers.co.kr/learn/courses/30/lessons/258712
