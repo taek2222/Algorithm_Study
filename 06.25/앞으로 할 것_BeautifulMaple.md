@@ -14,3 +14,6 @@ https://taegyeom.notion.site/dad0d7b1da234fbaa21da9113c9605cf?pvs=4
 
 **정보처리기사 실기**
 - 노션으로 정리할 예정
+
+# 나혼자만 레벨 업 Unity로 갓생살기
+-> 참가자 선정 되길 기원 중...
